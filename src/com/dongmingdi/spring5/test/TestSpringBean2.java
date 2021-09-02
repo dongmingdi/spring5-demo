@@ -4,7 +4,6 @@ import com.dongmingdi.spring5.bean.Emp;
 import com.dongmingdi.spring5.service.UserService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestSpringBean2 {
