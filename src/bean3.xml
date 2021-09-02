@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
     <!-- 集合类型属性的注入 -->
     <bean id="stu" class="com.dongmingdi.spring5.collectiontype.Stu">
@@ -37,5 +39,36 @@
                 <value>Redis</value>
             </set>
         </property>
+
+        <property name="courseList">
+            <list>
+                <ref bean="course1"></ref>
+                <ref bean="course2"></ref>
+                <ref bean="course3"></ref>
+            </list>
+        </property>
+
+        <property name="bookList" ref="bookList"></property>
+    </bean>
+
+    <bean id="course1" class="com.dongmingdi.spring5.collectiontype.Course">
+        <property name="cname" value="数学"></property>
+    </bean>
+
+    <bean id="course2" class="com.dongmingdi.spring5.collectiontype.Course">
+        <property name="cname" value="语文"></property>
+    </bean>
+
+    <bean id="course3" class="com.dongmingdi.spring5.collectiontype.Course">
+        <property name="cname" value="英语"></property>
+    </bean>
+
+    <util:list id="bookList">
+        <value>自动驾驶</value>
+        <value>百度地图</value>
+    </util:list>
+
+    <bean id="book" class="com.dongmingdi.spring5.collectiontype.Book">
+        <property name="list" ref="bookList"></property>
     </bean>
 </beans>

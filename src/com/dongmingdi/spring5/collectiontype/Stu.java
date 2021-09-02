@@ -1,5 +1,7 @@
 package com.dongmingdi.spring5.collectiontype;
 
+import com.dongmingdi.spring5.Book;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +15,18 @@ public class Stu {
     private Map<String, String> maps;
 
     private Set<String> sets;
+
+    private List<Course> courseList;
+
+    private List<String> bookList;
+
+    public void setBookList(List<String> bookList) {
+        this.bookList = bookList;
+    }
+
+    public void setCourseList(List<Course> courseList) {
+        this.courseList = courseList;
+    }
 
     public void setList(List<String> list) {
         this.list = list;
@@ -37,6 +51,8 @@ public class Stu {
                 ", list=" + list +
                 ", maps=" + maps +
                 ", sets=" + sets +
+                ", courseList=" + courseList +
+                ", bookList=" + bookList +
                 '}';
     }
 }
