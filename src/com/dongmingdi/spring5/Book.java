@@ -22,14 +22,14 @@ public class Book {
         this.bname = bname;
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "bname='" + bname + '\'' +
-                ", bauthor='" + bauthor + '\'' +
-                ", address='" + address + '\'' +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Book{" +
+//                "bname='" + bname + '\'' +
+//                ", bauthor='" + bauthor + '\'' +
+//                ", address='" + address + '\'' +
+//                '}';
+//    }
 
 //    public static void main(String[] args) {
 //        Book book = new Book();

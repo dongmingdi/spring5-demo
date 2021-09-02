@@ -4,6 +4,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- FactoryBean -->
-    <bean id="myBean" class="com.dongmingdi.spring5.factorybean.MyBean"></bean>
+    <bean id="myBean" class="com.dongmingdi.spring5.factorybean.MyBean" scope="prototype"></bean>
 
 </beans>

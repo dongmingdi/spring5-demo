@@ -8,7 +8,7 @@
     <bean id="user" class="com.dongmingdi.spring5.User"></bean>
 
     <!-- set方法注入属性 -->
-    <bean id="book" class="com.dongmingdi.spring5.Book">
+    <bean id="book" class="com.dongmingdi.spring5.Book" scope="prototype">
         <property name="bname" value="spring"></property>
         <property name="bauthor" value="dmd"></property>
         <!-- 属性值包含null -->
