@@ -7,6 +7,13 @@ public class Book {
 
     private String bauthor;
 
+    private String address;
+
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public void setBauthor(String bauthor) {
         this.bauthor = bauthor;
     }
@@ -20,6 +27,7 @@ public class Book {
         return "Book{" +
                 "bname='" + bname + '\'' +
                 ", bauthor='" + bauthor + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 

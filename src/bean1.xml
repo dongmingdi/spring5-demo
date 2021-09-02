@@ -11,6 +11,15 @@
     <bean id="book" class="com.dongmingdi.spring5.Book">
         <property name="bname" value="spring"></property>
         <property name="bauthor" value="dmd"></property>
+        <!-- 属性值包含null -->
+<!--        <property name="address">-->
+<!--            <null/>-->
+<!--        </property>-->
+        <!-- 属性值包含特殊符号 -->
+<!--        <property name="address" value="<<南京>>"></property>-->
+        <property name="address">
+            <value><![CDATA[<<南京>>]]></value>
+        </property>
     </bean>
 
     <!-- 有参构造方法注入属性 -->

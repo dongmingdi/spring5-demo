@@ -27,7 +27,7 @@ public class TestSpring5 {
         ApplicationContext context = new ClassPathXmlApplicationContext("bean1.xml");
 
         // 2 获取配置创建的对象
-        Book book = context.getBean("bookp", Book.class);
+        Book book = context.getBean("book", Book.class);
 
         System.out.println(book);
     }
