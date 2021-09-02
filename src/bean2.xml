@@ -19,4 +19,15 @@
             </bean>
         </property>
     </bean>
+
+    <!-- 级联赋值 -->
+    <bean id="emp1" class="com.dongmingdi.spring5.bean.Emp">
+        <property name="ename" value="Lucy"></property>
+        <property name="gender" value="女"></property>
+        <property name="dept" ref="dept1"></property>
+        <property name="dept.dname" value="技术部"></property>
+    </bean>
+    <bean id="dept1" class="com.dongmingdi.spring5.bean.Dept">
+        <property name="dname" value="财务部"></property>
+    </bean>
 </beans>
