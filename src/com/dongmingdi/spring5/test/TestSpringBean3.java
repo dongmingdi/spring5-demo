@@ -2,7 +2,6 @@ package com.dongmingdi.spring5.test;
 
 import com.dongmingdi.spring5.collectiontype.Book;
 import com.dongmingdi.spring5.collectiontype.Stu;
-import com.dongmingdi.spring5.service.UserService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
