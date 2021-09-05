@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 开启组建扫描 多个包之间用逗号隔开 或者写他们的上层目录-->
+<!--    <context:component-scan base-package="com.dongmingdi.spring5"></context:component-scan>-->
+
+    <!-- 表示不用默认过滤器 扫描注解包含 -->
+    <context:component-scan base-package="com.dongmingdi.spring5" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Component"/>
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+    </context:component-scan>
+
+    <!-- 表示不用默认过滤器 不去扫描注解包含 -->
+    <context:component-scan base-package="com.dongmingdi.spring5" use-default-filters="false">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Indexed"/>
+    </context:component-scan>
+</beans>

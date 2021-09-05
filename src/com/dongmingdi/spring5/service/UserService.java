@@ -1,7 +1,10 @@
 package com.dongmingdi.spring5.service;
 
 import com.dongmingdi.spring5.dao.UserDao;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService {
 
     public void setUserDao(UserDao userDao) {
@@ -14,6 +17,6 @@ public class UserService {
 
     public void add() {
         System.out.println("service add .....");
-        userDao.update();
+//        userDao.update();
     }
 }
