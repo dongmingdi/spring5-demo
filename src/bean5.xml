@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 自动装备 autowire 根据名称注入byName 根据类型注入byType-->
+    <bean id="empAuto" class="com.dongmingdi.spring5.autowire.Emp" autowire="byType">
+<!--        <property name="dept" ref="dept-auto"></property>-->
+    </bean>
+    <bean id="dept" class="com.dongmingdi.spring5.autowire.Dept"></bean>
+</beans>

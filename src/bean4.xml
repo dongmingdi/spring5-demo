@@ -3,7 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- FactoryBean -->
     <bean id="orders" class="com.dongmingdi.spring5.bean.Orders" init-method="initMethod" destroy-method="destroyMethod">
         <property name="oname" value="手机"></property>
     </bean>
