@@ -7,8 +7,6 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.zip.ZipException;
-
 @Service
 @Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.REPEATABLE_READ, timeout = 5, readOnly = false, rollbackFor = {NullPointerException.class}, noRollbackFor = {ArithmeticException.class})
 public class AccountService {
