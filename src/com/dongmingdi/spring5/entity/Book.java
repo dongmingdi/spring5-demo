@@ -2,6 +2,16 @@ package com.dongmingdi.spring5.entity;
 
 public class Book {
     private String userId;
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "userId='" + userId + '\'' +
+                ", username='" + username + '\'' +
+                ", ustatus='" + ustatus + '\'' +
+                '}';
+    }
+
     private String username;
     private String ustatus;
 

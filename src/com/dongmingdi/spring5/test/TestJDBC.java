@@ -13,8 +13,8 @@ public class TestJDBC {
         ApplicationContext context = new ClassPathXmlApplicationContext("mysql.xml");
         BookService bookService = context.getBean("bookService", BookService.class);
         Book book = new Book();
-        book.setUsername("java");
-        book.setUstatus("up");
+        book.setUsername("php");
+        book.setUstatus("up1");
         bookService.add(book);
     }
 
@@ -34,5 +34,26 @@ public class TestJDBC {
         ApplicationContext context = new ClassPathXmlApplicationContext("mysql.xml");
         BookService bookService = context.getBean("bookService", BookService.class);
         bookService.deleteBook("1");
+    }
+
+    @Test
+    public void testCount() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("mysql.xml");
+        BookService bookService = context.getBean("bookService", BookService.class);
+        System.out.println(bookService.findCount());
+    }
+
+    @Test
+    public void testFindOne() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("mysql.xml");
+        BookService bookService = context.getBean("bookService", BookService.class);
+        System.out.println(bookService.findOne("2").toString());
+    }
+
+    @Test
+    public void testFindAll() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("mysql.xml");
+        BookService bookService = context.getBean("bookService", BookService.class);
+        System.out.println(bookService.findAll());
     }
 }
