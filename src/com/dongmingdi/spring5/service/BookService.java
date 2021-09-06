@@ -42,4 +42,9 @@ public class BookService {
     public List<Book> findAll() {
         return bookDao.findAllBook();
     }
+
+    // 批量添加
+    public int[] batchAdds(List<Object[]> batchargs) {
+        return bookDao.batchAdds(batchargs);
+    }
 }
