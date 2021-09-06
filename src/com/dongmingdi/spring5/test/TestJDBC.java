@@ -6,6 +6,10 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class TestJDBC {
 
     @Test
@@ -55,5 +59,19 @@ public class TestJDBC {
         ApplicationContext context = new ClassPathXmlApplicationContext("mysql.xml");
         BookService bookService = context.getBean("bookService", BookService.class);
         System.out.println(bookService.findAll());
+    }
+
+    @Test
+    public void testBatchAdds() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("mysql.xml");
+        BookService bookService = context.getBean("bookService", BookService.class);
+        List<Object[]> batchArgs = new ArrayList<>();
+        Object[] o1 = {"linux", "up"};
+        batchArgs.add(o1);
+        Object[] o2 = {"mysql", "down"};
+        batchArgs.add(o2);
+        Object[] o3 = {"c++", "up"};
+        batchArgs.add(o3);
+        System.out.println(Arrays.toString(bookService.batchAdds(batchArgs)));
     }
 }
