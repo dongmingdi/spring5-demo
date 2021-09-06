@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.zip.ZipException;
 
 @Service
-@Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.REPEATABLE_READ, timeout = 5, readOnly = true, rollbackFor = {NullPointerException.class}, noRollbackFor = ZipException.class)
+@Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.REPEATABLE_READ, timeout = 5, readOnly = false, rollbackFor = {NullPointerException.class}, noRollbackFor = {ArithmeticException.class})
 public class AccountService {
     @Autowired
     public AccountDao accountDao;

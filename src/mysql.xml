@@ -3,9 +3,11 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx.xsd">
+       http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- 直接配置链接池 -->
 <!--    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">-->
@@ -38,4 +40,17 @@
 
     <!-- 开启事务注解 -->
     <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
+
+    <!-- 配置增强 -->
+    <tx:advice id="txadvice">
+        <tx:attributes>
+            <tx:method name="accountMoney" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!-- 配置切入点 -->
+    <aop:config>
+        <aop:pointcut id="pt" expression="execution(* com.dongmingdi.spring5.service.AccountService.*(..))"/>
+        <aop:advisor advice-ref="txadvice" pointcut-ref="pt"></aop:advisor>
+    </aop:config>
 </beans>
