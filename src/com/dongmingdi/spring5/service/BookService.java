@@ -47,4 +47,14 @@ public class BookService {
     public int[] batchAdds(List<Object[]> batchargs) {
         return bookDao.batchAdds(batchargs);
     }
+
+    // 批量修改
+    public int[] batchUpdate(List<Object[]> batchargs) {
+        return bookDao.batchUpdate(batchargs);
+    }
+
+    // 批量删除
+    public int[] batchDelete(List<Object[]> batchargs) {
+        return bookDao.batchDelete(batchargs);
+    }
 }

@@ -18,4 +18,8 @@ public interface BookDao {
     List<Book> findAllBook();
 
     int[] batchAdds(List<Object[]> batchArgs);
+
+    int[] batchUpdate(List<Object[]> batchArgs);
+
+    int[] batchDelete(List<Object[]> batchArgs);
 }

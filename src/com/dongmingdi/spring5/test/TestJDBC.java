@@ -74,4 +74,32 @@ public class TestJDBC {
         batchArgs.add(o3);
         System.out.println(Arrays.toString(bookService.batchAdds(batchArgs)));
     }
+
+    @Test
+    public void testBatchUpdate() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("mysql.xml");
+        BookService bookService = context.getBean("bookService", BookService.class);
+        List<Object[]> batchArgs = new ArrayList<>();
+        Object[] o1 = {"linux1", "down", "4"};
+        batchArgs.add(o1);
+        Object[] o2 = {"mysql1", "up", "5"};
+        batchArgs.add(o2);
+        Object[] o3 = {"c++1", "down", "6"};
+        batchArgs.add(o3);
+        System.out.println(Arrays.toString(bookService.batchUpdate(batchArgs)));
+    }
+
+    @Test
+    public void testBatchDelete() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("mysql.xml");
+        BookService bookService = context.getBean("bookService", BookService.class);
+        List<Object[]> batchArgs = new ArrayList<>();
+        Object[] o1 = {"4"};
+        batchArgs.add(o1);
+        Object[] o2 = {"5"};
+        batchArgs.add(o2);
+        Object[] o3 = {"6"};
+        batchArgs.add(o3);
+        System.out.println(Arrays.toString(bookService.batchDelete(batchArgs)));
+    }
 }
