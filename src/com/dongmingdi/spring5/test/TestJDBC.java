@@ -17,4 +17,22 @@ public class TestJDBC {
         book.setUstatus("up");
         bookService.add(book);
     }
+
+    @Test
+    public void testUpdate() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("mysql.xml");
+        BookService bookService = context.getBean("bookService", BookService.class);
+        Book book = new Book();
+        book.setUserId("1");
+        book.setUsername("php");
+        book.setUstatus("down");
+        bookService.updateBook(book);
+    }
+
+    @Test
+    public void testDelete() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("mysql.xml");
+        BookService bookService = context.getBean("bookService", BookService.class);
+        bookService.deleteBook("1");
+    }
 }
